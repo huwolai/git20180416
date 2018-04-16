@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  creationTimestamp: null
+  name: apachehomev
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  capacity:
+    storage: 20Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: apachehome
+    namespace: qiyunxin
+  hostPath:
+    path: /data/apachehome/html
+  persistentVolumeReclaimPolicy: Recycle
+status: {}
